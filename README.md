@@ -16,6 +16,10 @@ send a request to create a repetitive job
 The background will call the task cyclically according to the method name
 ![image](https://user-images.githubusercontent.com/41464360/174422329-1eb13ec0-53ee-4d20-8bfe-dcd17eb2527d.png)
 
+**COMMENTS**
+Regardless of whether the execution is successful or timeout, the scheduled task will retry the execution.
+If we want to make the interaction faster,maybe can search job infos in  jobTaskMap rather than db,please refer to 
+![img.png](img.png)
 
 
 

@@ -23,7 +23,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 public class JobManager implements DisposableBean {
 
-    //using concurrentHashMap to storage jobTasks
+    //using concurrentHashMap to storage jobTasks,for interaction faster,maybe can search job infos in this map rather  than db
     private final Map<String, JobTask> jobTaskMap = new ConcurrentHashMap<>(16);
 
     @Autowired
