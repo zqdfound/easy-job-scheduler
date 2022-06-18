@@ -18,12 +18,14 @@ The background will call the task cyclically according to the method name
 ![image](https://user-images.githubusercontent.com/41464360/174422329-1eb13ec0-53ee-4d20-8bfe-dcd17eb2527d.png)
 
 2.send a request to create a one time execution job
-![img_1.png](img_1.png)
-![img_2.png](img_2.png)
+![image](https://user-images.githubusercontent.com/41464360/174423292-9dde0bfc-0c8d-46b4-a228-73b111724ea2.png)
+![image](https://user-images.githubusercontent.com/41464360/174423296-2604e92c-8124-4959-bf42-29566956b64e.png)
+
 **COMMENTS**
 Regardless of whether the execution is successful or timeout, the scheduled task will retry the execution.
-If we want to make the interaction faster,maybe can search job infos in  jobTaskMap rather than db,please refer to 
-![img.png](img.png)
+If we want to make the interaction faster,maybe can search job infos in  jobTaskMap rather than db,please refer to
+com.zqdfound.easyjobscheduler.service.JobManager-> jobTaskMap
+![image](https://user-images.githubusercontent.com/41464360/174423308-5863e205-13aa-4196-8d92-653c490beb36.png)
 
 
 
