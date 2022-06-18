@@ -6,6 +6,7 @@ import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 
 /**
+ * Thread pool configuration
  * @author zhuangqingdian
  * @date 2022/6/17
  */

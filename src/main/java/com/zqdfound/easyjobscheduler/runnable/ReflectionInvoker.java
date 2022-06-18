@@ -2,11 +2,11 @@ package com.zqdfound.easyjobscheduler.runnable;
 
 import com.zqdfound.easyjobscheduler.mapper.JobMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 
 /**
+ * an invoker for execute custom job method
  * @author zhuangqingdian
  * @date 2022/6/18
  */

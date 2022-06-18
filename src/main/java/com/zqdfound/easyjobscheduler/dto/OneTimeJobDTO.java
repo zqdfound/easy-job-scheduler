@@ -1,11 +1,11 @@
 package com.zqdfound.easyjobscheduler.dto;
 
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
 /**
+ * one time execution job request dto
  * @author zhuangqingdian
  * @date 2022/6/18
  */

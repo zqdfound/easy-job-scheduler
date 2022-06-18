@@ -3,6 +3,7 @@ package com.zqdfound.easyjobscheduler.domain;
 import lombok.Data;
 
 /**
+ * common response
  * @author zhuangqingdian
  * @date 2021/5/14
  */

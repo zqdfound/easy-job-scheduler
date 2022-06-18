@@ -3,6 +3,7 @@ package com.zqdfound.easyjobscheduler.service;
 import com.zqdfound.easyjobscheduler.domain.Job;
 import com.zqdfound.easyjobscheduler.domain.JobTask;
 import com.zqdfound.easyjobscheduler.domain.ResultInfo;
+import com.zqdfound.easyjobscheduler.mapper.JobMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,6 @@ import org.springframework.scheduling.TaskScheduler;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -28,6 +28,9 @@ public class JobManager implements DisposableBean {
 
     @Autowired
     private TaskScheduler taskScheduler;
+
+    @Autowired
+    private JobMapper jobMapper;
 
     /**
      * add one time execution job
@@ -115,11 +118,12 @@ public class JobManager implements DisposableBean {
      */
     @Override
     public void destroy() {
-        for (JobTask j: jobTaskMap.values()) {
+        for (Map.Entry<String, JobTask> entry : jobTaskMap.entrySet()){
             try {
-                j.cancel();
+                jobMapper.deleteById( entry.getKey());
+                entry.getValue().cancel();
             } catch (Exception e) {
-                log.error("close job-{} failed",j.toString());
+                log.error("close job-{} failed", entry.getValue().toString());
             }
         }
         jobTaskMap.clear();

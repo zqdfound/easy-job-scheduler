@@ -3,6 +3,7 @@ package com.zqdfound.easyjobscheduler.dto;
 import lombok.Data;
 
 /**
+ * Repetitive job request dto
  * @author zhuangqingdian
  * @date 2022/6/18
  */
